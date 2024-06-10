@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quale pizza dovrei ordinare?</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            text-align: center;
+            background: url('https://images.pexels.com/photos/1231234/pizza-background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+        }
+        h1 {
+            color: red;
+            margin-top: 50px;
+            text-shadow: 2px 2px #fff;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            display: inline-block;
+            padding: 20px;
+            margin-top: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        img {
+            width: 300px;
+            height: auto;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 4px #999;
+        }
+        button:hover {
+            background-color: darkred;
+        }
+        button:active {
+            background-color: darkred;
+            box-shadow: 0 2px #666;
+            transform: translateY(2px);
+        }
+        form {
+            margin: 20px;
+            text-align: left;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .question p {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .question label {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Quale pizza dovrei ordinare?</h1>
+        <img src="pizzas.jpg" alt="Pizza">
+        <form id="quizForm">
+            <div class="question">
+                <p>Preferisci un weekend avventuroso o rilassante?</p>
+                <input type="radio" id="avventuroso" name="weekend" value="avventuroso"><label for="avventuroso">Avventuroso</label><br>
+                <input type="radio" id="rilassante" name="weekend" value="rilassante"><label for="rilassante">Rilassante</label>
+            </div>
+            <div class="question">
+                <p>Sei una persona mattiniera o nottambula?</p>
+                <input type="radio" id="mattiniera" name="daytime" value="mattiniera"><label for="mattiniera">Mattiniera</label><br>
+                <input type="radio" id="nottambula" name="daytime" value="nottambula"><label for="nottambula">Nottambula</label>
+            </div>
+            <div class="question">
+                <p>Preferisci il mare o la montagna?</p>
+                <input type="radio" id="mare" name="place" value="mare"><label for="mare">Mare</label><br>
+                <input type="radio" id="montagna" name="place" value="montagna"><label for="montagna">Montagna</label>
+            </div>
+            <div class="question">
+                <p>Sei una persona impulsiva o meditativa?</p>
+                <input type="radio" id="impulsiva" name="approach" value="impulsiva"><label for="impulsiva">Impulsiva</label><br>
+                <input type="radio" id="meditativa" name="approach" value="meditativa"><label for="meditativa">Meditativa</label>
+            </div>
+            <div class="question">
+                <p>Come preferisci passare il tempo libero?</p>
+                <input type="radio" id="lettura" name="hobby" value="lettura"><label for="lettura">Lettura</label><br>
+                <input type="radio" id="sport" name="hobby" value="sport"><label for="sport">Sport</label><br>
+                <input type="radio" id="arte" name="hobby" value="arte"><label for="arte">Arte</label><br>
+                <input type="radio" id="musica" name="hobby" value="musica"><label for="musica">Musica</label>
+            </div>
+            <div class="question">
+                <p>Preferisci fare le cose da solo o con gli amici?</p>
+                <input type="radio" id="solo" name="social" value="solo"><label for="solo">Da solo</label><br>
+                <input type="radio" id="amici" name="social" value="amici"><label for="amici">Con gli amici</label>
+            </div>
+            <div class="question">
+                <p>In che tipo di città ti piacerebbe vivere?</p>
+                <input type="radio" id="piccola" name="cityType" value="piccola"><label for="piccola">Piccola e tranquilla</label><br>
+                <input type="radio" id="grande" name="cityType" value="grande"><label for="grande">Grande e vivace</label>
+            </div>
+            <div class="question">
+                <p>Quando pensi a una vacanza ideale, cosa immagini?</p>
+                <input type="radio" id="cultura" name="vacation" value="cultura"><label for="cultura">Cultura e storia</label><br>
+                <input type="radio" id="relax" name="vacation" value="relax"><label for="relax">Relax e spiaggia</label><br>
+                <input type="radio" id="avventura" name="vacation" value="avventura"><label for="avventura">Avventura e esplorazione</label>
+            </div>
+            <div class="question">
+                <p>Quanto spesso cambi le tue abitudini?</p>
+                <input type="radio" id="spesso" name="change" value="spesso"><label for="spesso">Spesso, mi piace variare</label><br>
+                <input type="radio" id="raramente" name="change" value="raramente"><label for="raramente">Raramente, preferisco la tradizione</label>
+            </div>
+            <div class="question">
+                <p>Quale tipo di libro preferisci?</p>
+                <input type="radio" id="libro_avventura" name="book" value="Calzone"><label for="libro_avventura">Avventura</label><br>
+                <input type="radio" id="romanzo" name="book" value="Margherita"><label for="romanzo">Romanzo</label><br>
+                <input type="radio" id="saggio" name="book" value="Quattro Stagioni"><label for="saggio">Saggio</label><br>
+                <input type="radio" id="fantascienza" name="book" value="Pepperoni"><label for="fantascienza">Fantascienza</label>
+            </div>
+            <button type="button" onclick="calculatePizza()">Scopri quale pizza ordinare!</button>
+        </form>
+        <div id="result"></div>
+    </div>
+    <script>
+        function calculatePizza() {
+            // Definizione dei punteggi per ogni tipo di pizza
+            var scores = {
+                "Margherita": 0,
+                "Quattro Formaggi": 0,
+                "Quattro Stagioni": 0,
+                "Capricciosa": 0,
+                "Würstel e Patatine Rossa": 0,
+                "Würstel e Patatine Bianca": 0,
+                "Marinara": 0,
+                "Bufalina": 0,
+                "Calzone": 0,
+                "Diavola": 0,
+                "Prosciutto e Funghi": 0,
+                "Siciliana": 0,
+                "Boscaiola": 0,
+                "Ortolana": 0,
+                "Broccoli e Salsiccia": 0
+            };
+    
+            // Logica per assegnare punteggi basati sulle risposte
+            if (document.getElementById("avventuroso").checked) {
+                scores["Diavola"] += 2;
+                scores["Prosciutto e Funghi"] +=2;
+                scores["Boscaiola"] +=2;
+                scores["Quattro Formaggi"] +=1;
+                scores["Quattro Stagioni"] +=2;
+                scores["Capricciosa"] +=3;
+                scores["Calzone"] +=1;
+                scores["Siciliana"] +=3;
+                scores["Broccoli e Salsiccia"] +=2;
+            }
+
+            if (document.getElementById("rilassante").checked) {
+                scores["Margherita"] += 3;
+                scores["Würstel e Patatine Bianca"] +=2;
+                scores["Würstel e Patatine Rossa"] +=2;
+                scores["Marinara"] +=3;
+                scores["Bufalina"] +=3;
+                scores["Ortolana"]+=2;
+            }
+            if (document.getElementById("mattiniera").checked) {
+                scores["Margherita"] += 5;
+                scores["Marinara"] +=3;
+                scores["Ortolana"] +=4;
+                scores["Bufalina"] +=2;
+                scores["Quattro Stagioni"] +=1;
+            }
+            if (document.getElementById("nottambula").checked) {
+                scores["Quattro Formaggi"] += 5;
+                scores["Diavola"] += 4;
+                scores["Würstel e Patatine Rossa"] +=3;
+                scores["Würstel e Patatine Bianca"] +=2;
+                scores["Calzone"] +=5;
+                scores["Prosciutto e Funghi"] +=4;
+                scores["Capricciosa"] += 1;
+                scores["Boscaiola"] += 5;
+                scores["Broccoli e salsiccia"] +=3;
+            }
+
+            if (document.getElementById("mare").checked) {
+                scores["Margherita"] += 3;
+                scores["Marinara"] +=5;
+                scores["Bufalina"] +=2;
+                scores["Siciliana"] +=4;
+                scores["Ortolana"] +=3;
+            }
+            if (document.getElementById("montagna").checked) {
+                scores["Quattro Formaggi"] += 5;
+                scores["Boscaiola"] += 5;
+                scores["Prosciutto e Funghi"] +=4;
+                scores["Capricciosa"] += 3;
+                scores["Calzone"] += 4;
+                scores["Diavola"] += 2;
+                scores["Broccoli e salsiccia"] +=3;
+            }
+
+            if (document.getElementById("impulsiva").checked) {
+                scores["Diavola"] += 5;
+                scores["Würstel e Patatine Rossa"] +=4;
+                scores["Calzone"] +=4;
+                scores["Prosciutto e Funghi"] +=3;
+                scores["Boscaiola"] +=4;
+                scores["Broccoli e Salsiccia"] +=3;
+                scores["Würstel e Patatine Bianca"] +=2;
+                scores["Siciliana"] +=4;
+            }
+
+            if (document.getElementById("meditativa").checked) {
+                scores["Margherita"] += 5;
+                scores["Marinara"] +=4;
+                scores["Quattro Formaggi"] +=3;
+                scores["Quattro Stagioni"] +=3;
+                scores["Bufalina"] +=4;
+                scores["Ortolana"]+=2;
+                scores["Capricciosa"] +=3;
+            }
+
+            if (document.getElementById("sport").checked) {
+                scores["Würstel e Patatine Rossa"] += 5;
+                scores["Calzone"] +=4;
+                scores["Diavola"] +=4;
+                scores["Boscaiola"] +=3;
+                scores["Prosciutto e Funghi"] +=3;
+            }
+            if (document.getElementById("lettura").checked) {
+                scores["Margherita"] += 5;
+                scores["Marinara"] +=4;
+                scores["Quattro Formaggi"] +=3;
+                scores["Bufalina"] +=3;
+                scores["Ortolana"] +=2;
+            }
+            if (document.getElementById("arte").checked) {
+                scores["Quattro Stagioni"] += 5;
+                scores["Capricciosa"] +=4;
+                scores["Siciliana"] +=3;
+                scores["Calzone"] +=2;
+                scores["Diavola"] +=2;
+            }
+            if (document.getElementById("musica").checked) {
+                scores["Ortolana"] += 5;
+                scores["Bufalina"] +=4;
+                scores["Quattro Stagioni"] +=4;
+                scores["Capricciosa"] +=4;
+                scores["Boscaiola"] +=3;
+            }
+
+            if (document.getElementById("solo").checked) {
+                scores["Margherita"] += 4;
+                scores["Marinara"] += 3;
+                scores["Bufalina"] += 2;
+                scores["Ortolana"] += 3;
+            }
+
+            if (document.getElementById("amici").checked) {
+                scores["Quattro Formaggi"] += 4;
+                scores["Diavola"] += 3;
+                scores["Calzone"] += 3;
+                scores["Prosciutto e Funghi"] += 2;
+                scores["Capricciosa"] += 2;
+            }
+
+            if (document.getElementById("piccola").checked) {
+                scores["Margherita"] += 3;
+                scores["Marinara"] += 2;
+                scores["Ortolana"] += 2;
+                scores["Bufalina"] += 2;
+            }
+
+            if (document.getElementById("grande").checked) {
+                scores["Quattro Formaggi"] += 3;
+                scores["Diavola"] += 2;
+                scores["Calzone"] += 2;
+                scores["Capricciosa"] += 2;
+                scores["Boscaiola"] += 2;
+            }
+
+            if (document.getElementById("cultura").checked) {
+                scores["Siciliana"] += 5;
+                scores["Bufalina"] += 3;
+                scores["Marinara"] += 2;
+                scores["Ortolana"] += 2;
+            }
+
+            if (document.getElementById("relax").checked) {
+                scores["Hawaii"] += 5;
+                scores["Bufalina"] += 3;
+                scores["Margherita"] += 2;
+                scores["Ortolana"] += 2;
+            }
+
+            if (document.getElementById("avventura").checked) {
+                scores["Diavola"] += 5;
+                scores["Prosciutto e Funghi"] += 3;
+                scores["Calzone"] += 3;
+                scores["Capricciosa"] += 2;
+                scores["Boscaiola"] += 2;
+            }
+
+            if (document.getElementById("spesso").checked) {
+                scores["Gourmet"] += 5;
+                scores["Diavola"] += 3;
+                scores["Prosciutto e Funghi"] += 2;
+                scores["Calzone"] += 2;
+                scores["Boscaiola"] += 2;
+            }
+
+            if (document.getElementById("raramente").checked) {
+                scores["Tradizionale"] += 5;
+                scores["Margherita"] += 3;
+                scores["Marinara"] += 2;
+                scores["Ortolana"] += 2;
+                scores["Bufalina"] += 2;
+            }
+
+            if (document.getElementById("libro_avventura").checked) {
+                scores["Calzone"] += 5;
+                scores["Diavola"] += 3;
+                scores["Prosciutto e Funghi"] += 2;
+                scores["Capricciosa"] += 2;
+                scores["Boscaiola"] += 2;
+            }
+
+            if (document.getElementById("romanzo").checked) {
+                scores["Margherita"] += 5;
+                scores["Marinara"] += 3;
+                scores["Ortolana"] += 2;
+                scores["Bufalina"] += 2;
+            }
+
+            if (document.getElementById("saggio").checked) {
+                scores["Quattro Stagioni"] += 5;
+                scores["Capricciosa"] += 3;
+                scores["Siciliana"] += 2;
+                scores["Calzone"] += 2;
+            }
+
+            if (document.getElementById("fantascienza").checked) {
+                scores["Pepperoni"] += 5;
+                scores["Diavola"] += 3;
+                scores["Prosciutto e Funghi"] += 2;
+                scores["Boscaiola"] += 2;
+            }
+
+            // Trova il massimo punteggio e determina la pizza consigliata
+            var maxScore = -1;
+            var recommendedPizza = "";
+            for (var pizza in scores) {
+                if (scores[pizza] > maxScore) {
+                    maxScore = scores[pizza];
+                    recommendedPizza = pizza;
+                }
+            }
+    
+            // Mostra il risultato
+            document.getElementById('result').innerHTML = '<h2>Basato sulle tue risposte, dovresti ordinare una pizza ' + recommendedPizza + '!</h2>';
+        }
+    </script>
+</body>
+</html>
